@@ -6,6 +6,7 @@ const Header = () => {
 
     const menuItems = <>
       <li className='font-semi-bold'><Link to='/'>Home</Link></li>
+      <li className='font-semi-bold'><Link to='/login'>login</Link></li>
       
     </>
 
