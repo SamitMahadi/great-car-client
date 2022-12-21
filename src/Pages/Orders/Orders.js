@@ -7,7 +7,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+        fetch(`https://great-car-server.vercel.app/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user?.email])
@@ -15,7 +15,7 @@ const Orders = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure, you want to cancel this order');
         if(proceed){
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://great-car-server.vercel.app/orders/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
@@ -31,7 +31,7 @@ const Orders = () => {
     }
 
     const handleStatusUpdate = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://great-car-server.vercel.app/orders/${id}`, {
             method: 'PATCH', 
             headers: {
                 'content-type': 'application/json'
@@ -54,10 +54,10 @@ const Orders = () => {
 
     return (
         <div>
-            <h2 className="text-5xl">You have {orders.length} Orders</h2>
+            <h2 className="text-5xl text-orange-500 fon-bold py-5">You have {orders.length} Orders</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
-                    <thead>
+                    <thead className='pb-4'>
                         <tr>
                             <th>
                             </th>
@@ -67,7 +67,7 @@ const Orders = () => {
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='pb-4'>
                         {
                             orders.map(order => <OrdersRow
                                 key={order._id}

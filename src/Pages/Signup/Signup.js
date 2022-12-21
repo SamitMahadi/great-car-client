@@ -48,7 +48,7 @@ const SignUp = () => {
 
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="Sign Up" />
+                            <input className="bg-orange-600 text-white font-semibold px-4 py-3 rounded" type="submit" value="Sign Up" />
                         </div>
                     </form>
                     <p className='text-center'>Already have an account? <Link className='text-orange-600 font-bold' to="/login">Login</Link> </p>
