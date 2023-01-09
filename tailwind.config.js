@@ -5,7 +5,12 @@ module.exports = {
 
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero': "url('/src/assets/images/homeCarousel/3.jpg')",
+        
+      },
+    },
   },
   plugins: [require("daisyui")],
 }
